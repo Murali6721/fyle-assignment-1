@@ -28,7 +28,7 @@ async function fetchRepositories(username) {
 
   try {
     
-    const userResponse = await fetch(apiUrl, apiOptions);
+    const userResponse = await fetch(apiUrl,);
     const user = await userResponse.json();
     displayUser(user);
 
@@ -54,7 +54,7 @@ async function displayUser(user, currentpage = 1) {
   } = user;
   const repoEl = document.getElementById("repositories");
   const repoApi = `https://api.github.com/users/${login}/repos?per_page=10&page=${currentpage}`
-  const results = await fetch(repoApi,apiOptions);
+  const results = await fetch(repoApi);
   const repositories = await results.json();
 //   console.log(repositories);
     // Show loader
@@ -105,7 +105,7 @@ async function displayUser(user, currentpage = 1) {
 //   const currentItems = repositories.slice(startIndex, endIndex);
     repositories.forEach(async (repo) => {
         const { description, languages_url, full_name } = repo;
-        const languages = await fetch(languages_url, apiOptions);
+        const languages = await fetch(languages_url,);
         const langs = await languages.json()
         const langsArray = Object.keys(langs)
         // console.log(langsArray)
