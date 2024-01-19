@@ -1,6 +1,6 @@
 const inputEl = document.getElementById("inputId");
 const accessToken =
-  "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";
+  "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";
 document.getElementById("loader").style.display = "none";
 const incrementEl = document.getElementById("increment")
 const decrementEl = document.getElementById("decrement")
